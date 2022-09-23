@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
+
+$cor-primaria: #37AB00;
+$cor-fundo: #FBFEF4;
+$cor-fundo2: #FFF;
+
+$preto-transparent-30: #0000004D;
+$preto-transparent-20: #00000033;
+$preto-transparent-03: #00000008;
+$preto-transparent-70: #000000b3;
+
+$branco: $cor-fundo2;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  // background-color: $cor-fundo;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+  &-center {
+    justify-content: center;
+    align-items: center;
+  }
+}
