@@ -1,4 +1,3 @@
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
 import { PlayerComponent } from './player.component';
 import { NgModule } from '@angular/core';
@@ -15,7 +14,6 @@ import { ButtonMenuComponent } from 'src/app/components/button-menu/button-menu.
   ],
   imports: [
     CommonModule,
-    FontAwesomeModule,
     RouterModule.forChild(PlayerRotas)
   ]
 })

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {faHome} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-panel-left',
@@ -7,9 +6,6 @@ import {faHome} from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./panel-left.component.scss']
 })
 export class PanelLeftComponent implements OnInit {
-
-  //Icons
-  homeIcon = faHome;
 
   constructor() { }
 
