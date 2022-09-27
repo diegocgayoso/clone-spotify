@@ -11,7 +11,7 @@ $m-between-menus: 10px;
   overflow-y: hidden;
   display: flex;
   flex-direction: column;
-  background-color: $cor-fundo2;
+  background-color: $cor-fundo-dark-mode;
   box-shadow: 1px 0px 15px #00000050;
 
   .menus {
@@ -28,15 +28,31 @@ $m-between-menus: 10px;
     .menu-container {
       width: 100%;
 
+      &.flex {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+      }
       &.options{
         min-height: $h-menu-options;
-        flex-direction: column;
 
         * {
           margin-bottom: $m-between-menus;
         }
       }
-
+      .playlist-title {
+        margin: 10px 0px;
+        align-self: flex-start;
+        font-weight: bold;
+        font-size: .7rem;
+        color: $branco-transparent-30;
+      }
+      .playlist-scroll {
+        width: 100%;
+        * {
+          margin-bottom: $m-between-menus;
+        }
+      }
     }
   }
 }

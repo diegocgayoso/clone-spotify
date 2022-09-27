@@ -1,4 +1,7 @@
+import { IPlaylist } from './../../interfaces/IPlaylist';
 import { Component, OnInit } from '@angular/core';
+import {faHome, faMusic, faSearch} from '@fortawesome/free-solid-svg-icons';
+import { SpotifyService } from 'src/app/services/spotify.service';
 
 @Component({
   selector: 'app-panel-left',
@@ -7,9 +10,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanelLeftComponent implements OnInit {
 
-  constructor() { }
+  menuSelected = 'Home';
+
+  playlits: IPlaylist[] = [];
+
+  //Icons
+  homeIcon = faHome;
+  searchIcon = faSearch;
+  playlistIcon = faMusic;
+
+  constructor(private spotifyService: SpotifyService) { }
 
   ngOnInit(): void {
+    this.searchPlaylists();
   }
+
+  buttonClicked(button: string){
+    this.menuSelected = button;
+  }
+
+  async searchPlaylists(){
+    this.playlits = await this.spotifyService.searchPlaylistUser();
+  }
+
+
 
 }
