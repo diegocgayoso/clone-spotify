@@ -6,12 +6,14 @@ import { PlayerRotas } from './player.routes';
 import { PanelLeftComponent } from 'src/app/components/panel-left/panel-left.component';
 import { ButtonMenuComponent } from 'src/app/components/button-menu/button-menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FooterUserComponent } from 'src/app/components/footer-user/footer-user.component';
 
 @NgModule({
   declarations: [
     PlayerComponent,
     PanelLeftComponent,
-    ButtonMenuComponent
+    ButtonMenuComponent,
+    FooterUserComponent
   ],
   imports: [
     CommonModule,

@@ -33,11 +33,12 @@
     <span class="playlist-title">
       PLAYLISTS
     </span>
-    <div class="playlist-scroll">
+    <div class="playlist-scroll" >
       <app-button-menu
-        [description]="'Playlist#1'"
-        [selected]="menuSelected === 'Playlist#1'"
-        (click)="buttonClicked('Play#1')"
+        *ngFor="let playlist of playlists"
+        [description]="playlist.name"
+        [selected]="menuSelected === playlist.id"
+        (click)="buttonClicked(playlist.id)"
       >
         <fa-icon [icon]="playlistIcon" ></fa-icon>
 
@@ -46,4 +47,6 @@
   </div>
 
 </div>
-<div class="user-info"></div>
+<div class="user-info">
+  <app-footer-user></app-footer-user>
+</div>

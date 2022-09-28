@@ -12,7 +12,7 @@ export class PanelLeftComponent implements OnInit {
 
   menuSelected = 'Home';
 
-  playlits: IPlaylist[] = [];
+  playlists: IPlaylist[] = [];
 
   //Icons
   homeIcon = faHome;
@@ -30,9 +30,7 @@ export class PanelLeftComponent implements OnInit {
   }
 
   async searchPlaylists(){
-    this.playlits = await this.spotifyService.searchPlaylistUser();
+    this.playlists = await this.spotifyService.searchPlaylistUser();
+    console.log(this.playlists);
   }
-
-
-
 }

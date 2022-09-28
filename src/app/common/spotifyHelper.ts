@@ -9,10 +9,10 @@ export function SpotifyUserFromUser(user: SpotifyApi.CurrentUsersProfileResponse
   }
 }
 
-export function SpotifyPlaylistFromPlaylist(playlist: SpotifyApi.PlaylistObjectSimplified): IPlaylist{
-  return{
+export function SpotifyPlaylistFromPlaylist(playlist: SpotifyApi.PlaylistObjectSimplified): IPlaylist {
+  return {
     id: playlist.id,
     name: playlist.name,
-    imagemUrl: playlist.images.pop().url
-  };
+    // imageUrl: playlist.images.pop().url
+  }
 }

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { IUser } from './../interfaces/IUsers';
 import { SpotifyConfig } from './../../environments/environment';
 import { Injectable } from '@angular/core';
@@ -13,7 +14,7 @@ export class SpotifyService {
   spotifyApi: Spotify.SpotifyWebApiJs = null;
   user: IUser;
 
-  constructor() {
+  constructor(private router: Router) {
     this.spotifyApi = new Spotify();
   }
 
@@ -37,7 +38,7 @@ export class SpotifyService {
   async getSpotifyUser() {
     const userInfo = await this.spotifyApi.getMe();
     this.user = SpotifyUserFromUser(userInfo);
-    console.table(userInfo)
+    // console.table(userInfo)
   }
 
   getUrlLogin() {
@@ -65,8 +66,14 @@ export class SpotifyService {
 
   async searchPlaylistUser(offset = 0, limit = 50): Promise<IPlaylist[]> {
     const playlists = await this.spotifyApi.getUserPlaylists(this.user.id, { offset, limit });
-    console.table(playlists);
+    console.log(playlists.items.pop().images.pop().url);
 
     return playlists.items.map(SpotifyPlaylistFromPlaylist)
+  }
+
+  logout(){
+    localStorage.clear();
+    this.router.navigate(['/login'])
+
   }
 }
